@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>باشگاه مشتریان فروشگاه میر جلیل هاشمی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f4f6;--card:#fff;--line:#d5d9e0;--pri:#1e3a5f;--on:#fff;--tx:#1a2230;--mut:#5b6678;--red:#a4262c;--hov:#eef1f6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141b;--card:#171e28;--line:#2c3644;--pri:#8fb2df;--on:#0d1420;--tx:#e8ecf2;--mut:#9aa5b7;--red:#f08a8f;--hov:#1e2733}}
+:root[data-theme="dark"]{--bg:#0f141b;--card:#171e28;--line:#2c3644;--pri:#8fb2df;--on:#0d1420;--tx:#e8ecf2;--mut:#9aa5b7;--red:#f08a8f;--hov:#1e2733}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;padding:24px 16px;line-height:1.7}
+.wrap{max-width:1000px;margin:auto}
+header{border-bottom:3px solid var(--pri);padding-bottom:14px;margin-bottom:22px}
+h1{font-weight:800;font-size:clamp(20px,3.6vw,28px);color:var(--pri)}
+header p{color:var(--mut);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.stat span{color:var(--mut);font-size:13px;display:block}
+.stat b{font-size:22px;font-weight:800;color:var(--pri)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px;margin-bottom:18px}
+.panel h2{font-size:16px;margin-bottom:14px;font-weight:600;color:var(--tx);border-right:4px solid var(--pri);padding-right:10px}
+.form{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:12px}
+label{display:block;font-size:13px;color:var(--mut);margin-bottom:4px}
+input{font-family:inherit;background:var(--card);border:1px solid var(--line);color:var(--tx);padding:11px 13px;border-radius:5px;font-size:15px;width:100%;outline:none}
+input:focus{border-color:var(--pri);box-shadow:0 0 0 2px var(--pri)}
+input.num{direction:ltr;text-align:right}
+button{font-family:inherit;cursor:pointer;border:1px solid var(--line);border-radius:5px;padding:10px 16px;font-size:14px;font-weight:600;color:var(--tx);background:var(--card)}
+button:hover{background:var(--hov)}
+button:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+button.pri{background:var(--pri);color:var(--on);border-color:var(--pri)}
+button.pri:hover{filter:brightness(1.1)}
+button.dng{color:var(--red);border-color:var(--red)}
+.form .btn{align-self:end}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.tools input{flex:1;min-width:200px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{background:var(--hov);color:var(--tx);font-weight:600;font-size:13px;text-align:right;padding:10px 12px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--line);font-size:14px}
+.ph{direction:ltr;display:inline-block}
+.act{display:flex;gap:6px}
+.act button{padding:6px 12px;font-size:13px}
+.empty{text-align:center;color:var(--mut);padding:36px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:9}
+.modal.on{display:flex}
+.box{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pri);border-radius:6px;padding:22px;width:100%;max-width:420px}
+.box h3{color:var(--pri);margin-bottom:12px;font-size:17px}
+.box input{margin-bottom:10px}
+.row{display:flex;gap:10px;margin-top:8px}.row button{flex:1}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--pri);color:var(--on);padding:10px 20px;border-radius:5px;opacity:0;pointer-events:none;transition:opacity .25s;z-index:20;font-size:14px}
+.toast.on{opacity:1}
+#pr{display:none}
+.notif{position:fixed;top:0;right:0;z-index:30;width:100%;max-width:544px;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 0;pointer-events:none;transform:translateX(120%);transition:transform .55s cubic-bezier(.2,.9,.3,1)}
+.notif.on{transform:translateX(0)}
+.nbox{pointer-events:auto;cursor:pointer;display:flex;align-items:center;gap:12px;width:100%;background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:0 8px 28px rgba(0,0,0,.28)}
+.nico{flex:none;width:38px;height:38px;border-radius:10px;background:var(--pri);color:var(--on);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.ntx{flex:1;min-width:0;font-size:13.5px;line-height:1.7}
+.ntx small{display:block;color:var(--mut);font-size:11.5px}
+.nx{flex:none;padding:2px 8px;font-size:18px;line-height:1;border:none;background:transparent;color:var(--mut)}
+@media(prefers-reduced-motion:reduce){.notif{transition:none}}
+@media(max-width:700px){.form{grid-template-columns:1fr}.stat b{font-size:17px}.stat{padding:10px}}
+@media print{
+ body{background:#fff;color:#000;padding:0}.wrap,.modal,.toast,.notif{display:none!important}
+ #pr{display:block}#pr h1{color:#000;text-align:center;font-size:20px}
+ #pr p{text-align:center;margin:4px 0 14px;font-size:12px}
+ #pr table{width:100%;border-collapse:collapse}
+ #pr th,#pr td{border:1px solid #444;padding:6px 8px;font-size:13px;text-align:right;color:#000}
+ #pr th{background:#eee}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header>
+  <h1>باشگاه مشتریان فروشگاه میر جلیل هاشمی</h1>
+  <p>سامانه ثبت و مدیریت اعضا</p>
+ </header>
+
+ <div class="stats">
+  <div class="stat"><span>تعداد کل اعضا</span><b id="sTotal">۰</b></div>
+  <div class="stat"><span>ثبت‌نام امروز</span><b id="sToday">۰</b></div>
+  <div class="stat"><span>آخرین عضو ثبت‌شده</span><b id="sLast" style="font-size:15px">—</b></div>
+ </div>
+
+ <div class="panel">
+  <h2>ثبت عضو جدید</h2>
+  <div class="form">
+   <div><label for="fName">نام و نام خانوادگی</label><input id="fName" placeholder="اختیاری — در صورت خالی بودن «مشتری متفرقه» ثبت می‌شود" autocomplete="off"></div>
+   <div><label for="fNick">اسم مستعار</label><input id="fNick" placeholder="اختیاری" autocomplete="off"></div>
+   <div><label for="fPhone">شماره موبایل</label><input id="fPhone" class="num" placeholder="09121234567" inputmode="numeric" autocomplete="off"></div>
+   <div><label for="fInv">کد فاکتور</label><input id="fInv" class="num" placeholder="اختیاری — «متفرقه»" autocomplete="off"></div>
+   <button class="pri btn" id="btnAdd">ثبت عضو</button>
+  </div>
+  <p style="color:var(--mut);font-size:12px;margin-top:10px">تاریخ و ساعت ثبت به‌صورت خودکار و بر پایه تقویم شمسی ذخیره می‌شود.</p>
+ </div>
+
+ <div class="panel">
+  <h2>فهرست اعضا</h2>
+  <div class="tools">
+   <input id="fSearch" placeholder="جستجو بر اساس نام یا شماره موبایل">
+   <button id="btnPrint">چاپ فهرست</button>
+   <button id="btnCsv">دریافت فایل CSV</button>
+   <button id="btnBackup">دریافت نسخه پشتیبان</button>
+   <button id="btnRestore">بازگردانی نسخه پشتیبان</button>
+   <input type="file" id="fFile" accept=".json" style="display:none">
+  </div>
+  <div class="tbl"><table>
+   <thead><tr><th>ردیف</th><th>نام و نام خانوادگی</th><th>اسم مستعار</th><th>شماره موبایل</th><th>کد فاکتور</th><th>تاریخ و ساعت ثبت</th><th>عملیات</th></tr></thead>
+   <tbody id="tbody"></tbody>
+  </table></div>
+ </div>
+</div>
+
+<div class="modal" id="mEdit"><div class="box">
+ <h3>ویرایش اطلاعات عضو</h3>
+ <label for="eName">نام و نام خانوادگی</label><input id="eName">
+ <label for="eNick">اسم مستعار</label><input id="eNick" placeholder="اختیاری">
+ <label for="ePhone">شماره موبایل</label><input id="ePhone" class="num" inputmode="numeric">
+ <label for="eInv">کد فاکتور</label><input id="eInv" class="num" placeholder="در صورت خالی بودن «متفرقه»">
+ <div class="row"><button class="pri" id="btnSaveEdit">ذخیره تغییرات</button><button id="btnCancelEdit">انصراف</button></div>
+</div></div>
+
+<div class="modal" id="mDel"><div class="box">
+ <h3>حذف عضو</h3><p id="delTxt" style="margin-bottom:14px;color:var(--mut)"></p>
+ <div class="row"><button class="dng" id="btnConfirmDel">حذف عضو</button><button id="btnCancelDel">انصراف</button></div>
+</div></div>
+
+<div class="modal" id="mRes"><div class="box">
+ <h3>بازگردانی نسخه پشتیبان</h3><p id="resTxt" style="margin-bottom:14px;color:var(--mut)"></p>
+ <div class="row"><button class="pri" id="btnMerge">ادغام با فهرست فعلی</button><button class="dng" id="btnReplace">جایگزینی کامل</button></div>
+ <div class="row"><button id="btnCancelRes">انصراف</button></div>
+</div></div>
+
+<div id="pr"></div>
+<div class="notif" id="notif" role="status" aria-live="polite"><div class="nbox" id="nbox"><div class="nico">م</div><div class="ntx"><small id="nsub"></small><span id="ntxt"></span></div><button class="nx" id="nx" aria-label="بستن">×</button></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const KEY='mirjalil_club_v1';
+let data=[],editId=null,delId=null,pending=null,mem=null;
+function load(){try{const r=localStorage.getItem(KEY);return r?JSON.parse(r):[]}catch(e){return null}}
+const init=load();data=Array.isArray(init)?init:[];
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){toast('ذخیره‌سازی در این مرورگر ممکن نیست؛ لطفاً نسخه پشتیبان تهیه کنید')}};
+const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+const en=s=>s.replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+const fmt=iso=>new Intl.DateTimeFormat('fa-IR-u-ca-persian',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(iso));
+const dayKey=iso=>new Intl.DateTimeFormat('fa-IR-u-ca-persian',{dateStyle:'short'}).format(new Date(iso));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(t){const x=$('toast');x.textContent=t;x.classList.add('on');clearTimeout(x._t);x._t=setTimeout(()=>x.classList.remove('on'),3000)}
+const closeM=id=>$(id).classList.remove('on');
+const openM=id=>$(id).classList.add('on');
+function valid(name,phone,inv,nick){
+ nick=(nick||'').trim().replace(/\s+/g,' ');
+ inv=en(inv||'').trim().replace(/\s+/g,' ')||'متفرقه';
+ name=name.trim().replace(/\s+/g,' ');phone=en(phone).replace(/[\s\-]/g,'');
+ if(!name)name='مشتری متفرقه';
+ else if(name.length<2){toast('نام واردشده خیلی کوتاه است؛ آن را کامل کنید یا خالی بگذارید');return null}
+ if(phone.startsWith('+98'))phone='0'+phone.slice(3);else if(phone.startsWith('98')&&phone.length===12)phone='0'+phone.slice(2);
+ if(!/^09\d{9}$/.test(phone)){toast('شماره موبایل معتبر نیست؛ باید ۱۱ رقم و با ۰۹ شروع شود');return null}
+ return{name,phone,inv,nick};
+}
+function add(){
+ const v=valid($('fName').value,$('fPhone').value,$('fInv').value,$('fNick').value);if(!v)return;
+ if(data.some(x=>x.phone===v.phone)){toast('این شماره قبلاً ثبت شده است');return}
+ data.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:v.name,nick:v.nick,phone:v.phone,invoice:v.inv,createdAt:new Date().toISOString()});
+ save();$('fName').value='';$('fPhone').value='';$('fInv').value='';$('fNick').value='';$('fName').focus();render();toast('عضو جدید ثبت شد');
+}
+function list(){const s=en($('fSearch').value.trim().toLowerCase());return data.filter(x=>!s||x.name.toLowerCase().includes(s)||String(x.nick||'').toLowerCase().includes(s)||x.phone.includes(s)||String(x.invoice||'').toLowerCase().includes(s))}
+function render(){
+ const l=list();
+ $('tbody').innerHTML=l.length?l.map((x,i)=>`<tr><td>${fa(i+1)}</td><td>${esc(x.name)}</td><td>${x.nick?esc(x.nick):'—'}</td><td><span class="ph">${esc(x.phone)}</span></td><td>${esc(x.invoice||'متفرقه')}</td><td>${fmt(x.createdAt)}</td><td><div class="act"><button data-e="${esc(x.id)}">ویرایش</button><button class="dng" data-d="${esc(x.id)}">حذف</button></div></td></tr>`).join(''):`<tr><td colspan="7" class="empty">${data.length?'موردی مطابق جستجو یافت نشد':'هنوز عضوی ثبت نشده است. از فرم بالا عضو جدید را ثبت کنید.'}</td></tr>`;
+ $('sTotal').textContent=fa(data.length);
+ const t=dayKey(new Date().toISOString());$('sToday').textContent=fa(data.filter(x=>dayKey(x.createdAt)===t).length);
+ $('sLast').textContent=data[0]?data[0].name:'—';
+}
+function openEdit(id){const x=data.find(d=>d.id===id);if(!x)return;editId=id;$('eName').value=x.name;$('eNick').value=x.nick||'';$('ePhone').value=x.phone;$('eInv').value=(x.invoice&&x.invoice!=='متفرقه')?x.invoice:'';openM('mEdit');$('eName').focus()}
+function saveEdit(){
+ const v=valid($('eName').value,$('ePhone').value,$('eInv').value,$('eNick').value);if(!v)return;
+ if(data.some(x=>x.phone===v.phone&&x.id!==editId)){toast('این شماره برای عضو دیگری ثبت شده است');return}
+ const x=data.find(d=>d.id===editId);if(!x)return;x.name=v.name;x.nick=v.nick;x.phone=v.phone;x.invoice=v.inv;
+ save();closeM('mEdit');render();toast('اطلاعات عضو ویرایش شد');
+}
+function askDel(id){const x=data.find(d=>d.id===id);if(!x)return;delId=id;$('delTxt').textContent=`آیا از حذف «${x.name}» از باشگاه مشتریان اطمینان دارید؟`;openM('mDel')}
+function confirmDel(){data=data.filter(x=>x.id!==delId);save();closeM('mDel');render();toast('عضو حذف شد')}
+function backup(){
+ if(!data.length){toast('فهرستی برای پشتیبان‌گیری وجود ندارد');return}
+ const blob=new Blob([JSON.stringify({app:'mirjalil-club',exportedAt:new Date().toISOString(),members:data},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+ a.download=`backup-mirjalil-club-${new Date().toISOString().slice(0,10)}.json`;
+ document.body.appendChild(a);a.click();a.remove();toast('فایل پشتیبان دریافت شد');
+}
+function csvExport(){
+ const l=list();if(!l.length){toast('فهرستی برای خروجی وجود ندارد');return}
+ const q=v=>'"'+String(v).replace(/"/g,'""')+'"';
+ const safe=v=>/^[=+\-@]/.test(v)?"'"+v:v;
+ const rows=[[q('نام و نام خانوادگی'),q('شماره موبایل')].join(',')].concat(l.map(x=>[q(safe(x.name)),'="'+x.phone+'"'].join(',')));
+ const blob=new Blob(['\uFEFF'+rows.join('\r\n')],{type:'text/csv;charset=utf-8'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+ a.download=`members-mirjalil-club-${new Date().toISOString().slice(0,10)}.csv`;
+ document.body.appendChild(a);a.click();a.remove();toast('فایل CSV دریافت شد');
+}
+function restore(inp){
+ const f=inp.files[0];if(!f)return;const r=new FileReader();
+ r.onload=()=>{try{
+  const j=JSON.parse(r.result);const m=Array.isArray(j)?j:j.members;
+  if(!Array.isArray(m)||!m.every(x=>x.name&&x.phone&&x.createdAt))throw 0;
+  m.forEach(x=>{if(!x.invoice)x.invoice='متفرقه';if(!x.id)x.id=Date.now().toString(36)+Math.random().toString(36).slice(2,6)});
+  pending=m;$('resTxt').textContent=`${fa(m.length)} عضو در فایل پشتیبان یافت شد. نحوه بازگردانی را انتخاب کنید.`;openM('mRes');
+ }catch(e){toast('فایل پشتیبان معتبر نیست')}inp.value=''};
+ r.readAsText(f);
+}
+function applyRestore(mode){
+ if(!pending)return;
+ if(mode==='replace')data=pending.slice();
+ else{const ph=new Set(data.map(x=>x.phone));pending.forEach(x=>{if(!ph.has(x.phone)){data.push(x);ph.add(x.phone)}});}
+ data.sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+ save();closeM('mRes');render();toast('بازگردانی انجام شد');
+}
+function doPrint(){
+ const l=list();if(!l.length){toast('فهرستی برای چاپ وجود ندارد');return}
+ $('pr').innerHTML=`<h1>باشگاه مشتریان فروشگاه میر جلیل هاشمی</h1><p>تاریخ چاپ: ${fmt(new Date().toISOString())} — تعداد: ${fa(l.length)} نفر</p><table><thead><tr><th>ردیف</th><th>نام و نام خانوادگی</th><th>اسم مستعار</th><th>شماره موبایل</th><th>کد فاکتور</th><th>تاریخ ثبت</th></tr></thead><tbody>${l.map((x,i)=>`<tr><td>${fa(i+1)}</td><td>${esc(x.name)}</td><td>${x.nick?esc(x.nick):'—'}</td><td dir="ltr" style="text-align:right">${esc(x.phone)}</td><td>${esc(x.invoice||'متفرقه')}</td><td>${fmt(x.createdAt)}</td></tr>`).join('')}</tbody></table>`;
+ window.print();
+}
+$('btnAdd').onclick=add;
+$('fSearch').oninput=render;
+$('btnPrint').onclick=doPrint;
+$('btnBackup').onclick=backup;
+$('btnCsv').onclick=csvExport;
+$('btnRestore').onclick=()=>$('fFile').click();
+$('fFile').onchange=e=>restore(e.target);
+$('btnSaveEdit').onclick=saveEdit;
+$('btnCancelEdit').onclick=()=>closeM('mEdit');
+$('btnConfirmDel').onclick=confirmDel;
+$('btnCancelDel').onclick=()=>closeM('mDel');
+$('btnMerge').onclick=()=>applyRestore('merge');
+$('btnReplace').onclick=()=>applyRestore('replace');
+$('btnCancelRes').onclick=()=>closeM('mRes');
+$('tbody').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.e)openEdit(b.dataset.e);else if(b.dataset.d)askDel(b.dataset.d)};
+document.addEventListener('keydown',e=>{
+ if(e.key==='Enter'){
+  const a=document.activeElement,go=id=>{e.preventDefault();$(id).focus()};
+  if(a===$('fName'))go('fNick');
+  else if(a===$('fNick'))go('fPhone');
+  else if(a===$('fPhone'))go('fInv');
+  else if(a===$('fInv')){e.preventDefault();add()}
+  else if(a===$('eName'))go('eNick');
+  else if(a===$('eNick'))go('ePhone');
+  else if(a===$('ePhone'))go('eInv');
+  else if(a===$('eInv')){e.preventDefault();saveEdit()}
+ }
+ if(e.key==='Escape')['mEdit','mDel','mRes'].forEach(closeM);
+});
+if(init===null)toast('خواندن اطلاعات ذخیره‌شده ممکن نبود');
+render();
+(function(){
+ const n=$('notif'),M=[
+  {sub:'باشگاه مشتریان',html:'مدیریت، طراحی و توسعه وب‌سایت: فروشگاه میر جلیل هاشمی (متین هاشمی)',ms:7000},
+  {sub:'سامانه باشگاه مشتریان',html:'نسخه سامانه باشگاه مشتریان: <span dir="ltr" style="display:inline-block">1.2</span>',ms:5000}
+ ];
+ let t,shown=false,idx=0;
+ function show(i){idx=i;$('nsub').textContent=M[i].sub;$('ntxt').innerHTML=M[i].html;shown=true;n.classList.add('on');t=setTimeout(hide,M[i].ms)}
+ function hide(){if(!shown)return;shown=false;clearTimeout(t);n.classList.remove('on');if(idx+1<M.length)setTimeout(()=>show(idx+1),900)}
+ $('nbox').onclick=hide;
+ setTimeout(()=>show(0),500);
+})();
+</script>
+</body>
+</html>
